@@ -3,10 +3,12 @@ import express from "express";
 import { config } from "dotenv";
 import ModelJuegos from "./model/esquemaJuegos.js"; // Importa el modelo
 import ModelJuegos2 from "./model/esquemaJuegos2.js"; // Importa el modelo2
+import cors from "cors"
 
 config();
 
 const app = express();
+app.use(cors())
 app.use(express.json()); // Middleware para parsear el cuerpo de las peticiones a JSON
 
 // Rutas
